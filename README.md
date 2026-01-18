@@ -1,4 +1,15 @@
-# skin.theGreenButton
-I always loved Windows Media Center and hated that it lost support. Kodi has been great and I wanted to bring the UI experience of WMC to Kodi. One of the things that was always lacking in WMC was the ability to change the menu system. There were third party options that got it done but now that the UI is in Kodi, I'm hoping that it'll be a lot easier to do so. 
+Install Kodi first from kodi.tv
+Go to Add-ons, install from ZIP File and browse for skin.WindowsMediaCenter1.0.zip
+If you get a warning about Unknown Sources, follow the Settings link to allow it
 
-My main goal with this skin is to slim down the options on what is seen on the home menu and then allow you to better browse your media once you decided what you want to do (i.e. watch live tv, watch a movie, tv series, etc.). Once you go into a media section, you will be provided with a list of everything you have. The top portion of the menu (view, all videos, sort, update, etc) are all going to be actions you can take. The next menu down (browse by, search, genre, year, etc.) are going to be different ways to browse that media. The sub menu below that will be specific to the menu above it. So, if you are on browse by for movies you will get All movies, recently added, in progress, and sets. TV shows will have something specific for it as well as Live TV.
+Follow on-screen instructions
+Enjoy!
+
+Try out the stuff in the Mods folder, the Sounds and Splash screen at least are easy to apply
+
+RECOMMENDED ADDONS:
+
+Install from Start > Extras (Add-ons) - Repo
+
+Shoutcast Media Source - for the internet radio option
+Demo PVR Client / Simple IPTV - for the TV part
