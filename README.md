@@ -1,3 +1,8 @@
+Windows Media Center skin for Kodi
+Beta 1
+
+<img width="1080" height="1080" alt="image" src="https://github.com/user-attachments/assets/86d59d19-a836-4164-9305-d17462a9fe79" />
+
 Install Kodi first from kodi.tv
 Go to Add-ons, install from ZIP File and browse for skin.WindowsMediaCenter1.0.zip
 If you get a warning about Unknown Sources, follow the Settings link to allow it
