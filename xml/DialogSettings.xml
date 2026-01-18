@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">5</defaultcontrol>
+	<coordinates>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>
+	<include>dialogeffect</include>
+	<controls>
+		<control type="group">
+			<animation effect="fade" start="100" end="0" time="150" condition="Window.Is(contentsettings) + Window.IsActive(AddonSettings)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="300" condition="[Window.Is(osdaudiosettings) | Window.Is(osdvideosettings) | Window.Is(osdsubtitlesettings)] + [Window.IsVisible(SliderDialog) |  Window.IsVisible(FileBrowser)]">Conditional</animation>
+			<include content="DialogBackgroundCommons">
+				<param name="DialogBackgroundWidth" value="1920" />
+				<param name="DialogBackgroundHeight" value="1080" />
+				<param name="DialogHeaderWidth" value="720" />
+				<param name="DialogHeaderId" value="2" />
+				<param name="CloseButtonLeft" value="710" />
+				<param name="CloseButtonNav" value="10" />
+			</include>
+	
+			<control type="grouplist" id="5">
+				<animation effect="slide" start="0,0" end="-10,0" time="0" condition="Control.IsVisible(60)">Conditional</animation>
+				<description>control area</description>
+				<left>715</left>
+				<top>250</top>
+				<width>1000</width>
+				<height>600</height>
+				<itemgap>10</itemgap>
+				<pagecontrol>60</pagecontrol>
+				<onup>5</onup>
+				<ondown>5</ondown>
+				<onleft>9001</onleft>
+				<onright>9001</onright>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>1725</left>
+				<top>250</top>
+				<width>25</width>
+				<height>600</height>
+				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+				<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+				<textureslidernib>ScrollBarNib.png</textureslidernib>
+				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+				<onleft>5</onleft>
+				<onright>9001</onright>
+				<ondown>60</ondown>
+				<onup>60</onup>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+			</control>
+			<control type="button" id="7">
+				<description>Default Button</description>
+				<height>40</height>
+				<left>100</left>
+				<font>font30_bold</font>
+				<textoffsetx>100</textoffsetx>
+				<texturenofocus border="5">common/blank.png</texturenofocus>
+				<texturefocus border="5">common/blank.png</texturefocus>
+			</control>
+			<control type="radiobutton" id="8">
+				<description>Default RadioButton</description>
+				<height>50</height>
+				<left>100</left>
+				<font>font30_bold</font>
+				<textoffsetx>150</textoffsetx>
+				<radioposx>100</radioposx>
+				<texturenofocus border="5">common/blank.png</texturenofocus>
+				<texturefocus border="5">common/blank.png</texturefocus>
+				<textcolor>66FFFFFF</textcolor>
+				<focusedcolor>FFFFFFFF</focusedcolor>
+			</control>
+			<control type="spincontrolex" id="9">
+				<description>Default SpinControlex</description>
+				<height>40</height>
+				<left>100</left>
+				<font>font30_bold</font>
+				<textoffsetx>100</textoffsetx>
+				<texturenofocus border="5">common/blank.png</texturenofocus>
+				<texturefocus border="5">common/blank.png</texturefocus>
+				<aligny>center</aligny>
+				<textcolor>66FFFFFF</textcolor>
+				<focusedcolor>FFFFFFFF</focusedcolor>
+			</control>
+			<control type="image" id="11">
+				<description>separator image</description>
+				<height>2</height>
+				<texture colordiffuse="66FFFFFF">separator2.png</texture>
+			</control>
+			<control type="edit" id="12">
+				<description>Default Edit</description>
+				<height>40</height>
+				<left>100</left>
+				<font>font30</font>
+				<textoffsetx>100</textoffsetx>
+				<texturenofocus border="5">common/blank.png</texturenofocus>
+				<texturefocus border="5">common/blank.png</texturefocus>
+			</control>
+			<control type="sliderex" id="13">
+				<description>Default Slider</description>
+				<height>40</height>
+				<left>100</left>
+				<texturenofocus border="5">common/blank.png</texturenofocus>
+				<texturefocus border="5">common/blank.png</texturefocus>
+				<font>font30_bold</font>
+				<textcolor>66FFFFFF</textcolor>
+				<focusedcolor>FFFFFFFF</focusedcolor>
+				<textoffsetx>100</textoffsetx>
+			</control>
+			<control type="label" id="14">
+				<description>Default Heading</description>
+				<height>34</height>
+				<font>font12</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>blue</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="grouplist" id="9001">
+				<left>315</left>
+				<top>250</top>
+				<width>460</width>
+				<align>left</align>
+				<itemgap>20</itemgap>
+				<orientation>vertical</orientation>
+				<control type="button" id="28">
+					<description>OK Button</description>
+					<top>0</top>
+					<width>350</width>
+					<height>60</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font30_bold</font>
+					<onleft>5</onleft>
+					<onright>5</onright>
+					<onup>30</onup>
+					<ondown>29</ondown>
+				</control>
+				<control type="button" id="29">
+					<description>Cancel Button</description>
+					<top>0</top>
+					<width>350</width>
+					<height>60</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font30_bold</font>
+					<textoffsetx>20</textoffsetx>
+					<label/>
+					<onleft>5</onleft>
+					<onright>5</onright>
+					<onup>28</onup>
+					<ondown>30</ondown>
+				</control>
+				<control type="button" id="30">
+					<description>Settings Button</description>
+					<top>0</top>
+					<width>350</width>
+					<height>60</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font30_bold</font>
+					<onleft>5</onleft>
+					<onright>5</onright>
+					<onup>29</onup>
+					<ondown>28</ondown>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

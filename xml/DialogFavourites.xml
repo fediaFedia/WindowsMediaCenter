@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog">
+	<defaultcontrol always="true">450</defaultcontrol>
+	<coordinates>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>
+	<controls>
+		<control type="image">
+			<description>background image</description>
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
+			<texture fallback="special://skin/backgrounds/SKINDEFAULT.png" background="true" diffuse="diffuse/homeAdditionalInformation.png">$INFO[Skin.String(MasterCustomBackgroundPath)]</texture>
+			<animation effect="fade" time="200">WindowOpen</animation>
+			<animation effect="fade" time="300">WindowClose</animation>
+		</control>
+		<control type="group">
+			<depth>DepthSideBlade</depth>
+			<animation effect="slide" start="1000,0" end="0,0" time="300" tween="quadratic" easing="out">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="1000,0" time="300" tween="quadratic" easing="out">WindowClose</animation>
+			<!-- <control type="image">
+				<left>1000r</left>
+				<top>120</top>
+				<width>1000</width>
+				<height>500</height>
+				<texture border="15,0,0,0" flipx="true">HomeBladeSub.png</texture>
+			</control> -->
+			<!-- <control type="button">
+				<description>Close Window button</description>
+				<left>1580</left>
+				<top>100</top>
+				<width>64</width>
+				<height>32</height>
+				<label/>
+				<font/>
+				<onclick>PreviousMenu</onclick>
+				<texturefocus>DialogCloseButton-focus.png</texturefocus>
+				<texturenofocus>DialogCloseButton.png</texturenofocus>
+				<onleft>450</onleft>
+				<onright>450</onright>
+				<onup>450</onup>
+				<ondown>450</ondown>
+				<visible>false + system.getbool(input.enablemouse)</visible>
+			</control>
+			<control type="image">
+				<left>970r</left>
+				<top>130</top>
+				<width>200</width>
+				<height>200</height>
+				<aspectratio align="center">keep</aspectratio>
+				<fadetime>IconCrossfadeTime</fadetime>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<bordertexture border="8">ThumbShadow.png</bordertexture>
+				<bordersize>8</bordersize>
+			</control> -->
+			<control type="label">
+				<top>100</top>
+				<left>990r</left>
+				<label>all $LOCALIZE[1036]</label>
+				<font>font16_lcase</font>
+			</control>
+			<control type="label">
+				<left>990r</left>
+				<top>550</top>
+				<width>1000</width>
+				<font>font36</font>
+				<textcolor>white</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="panel" id="450">
+				<left>990r</left>
+				<top>130</top>
+				<width>1000</width>
+				<height>480</height>
+				<onup>450</onup>
+				<onleft>Dialog.Close(Favourites)</onleft>
+				<onright>450</onright>
+				<ondown>450</ondown>
+				<pagecontrol/>
+				<scrolltime>200</scrolltime>
+				<orientation>horizontal</orientation>
+				<!-- <include>HomeSubMenuBase</include> -->
+				<include>VisibleFadeEffect</include>
+				<itemlayout width="140" height="190">
+					<!-- <height>200</height>
+					<width>300</width>
+					<control type="label">
+						<top>150</top>
+						<font>font16_lcase</font>
+						<textcolor>whiteTransparent</textcolor>
+						<align>center</align>
+						<aligny>bottom</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control> -->
+					<control type="image">
+						<top>10</top>
+						<left>10</left>
+						<width>130</width>
+						<height>190</height>
+						<colordiffuse>66FFFFFF</colordiffuse>
+						<texture diffuse="diffuse/folderRounded.png">$INFO[ListItem.Property(unfocusedIcon)]</texture>
+						<aspectratio>keep</aspectratio>
+						<visible>!String.IsEmpty(ListItem.Property(unfocusedIcon))</visible>
+					</control>
+					<control type="image">
+						<top>5</top>
+						<left>5</left>
+						<width>130</width>
+						<height>190</height>
+						<colordiffuse>66FFFFFF</colordiffuse>
+						<texture colordiffuse="lightblueTransparent" diffuse="diffuse/folderRounded.png">$INFO[ListItem.icon]</texture>
+						<aspectratio>keep</aspectratio>
+						<visible>String.IsEmpty(ListItem.Property(unfocusedIcon))</visible>
+					</control>
+				</itemlayout>
+				<focusedlayout width="150" height="200">
+					<!-- <control type="label">
+						<left>-15</left>
+						<top>200</top>
+						<width>300</width>
+						<font>font30_lcase</font>
+						<textcolor>white</textcolor>
+						<align>right</align>
+						<aligny>bottom</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control> -->
+					<control type="image">
+						<width>150</width>
+						<height>200</height>
+						<colordiffuse>FFFFFFFF</colordiffuse>
+						<texture diffuse="diffuse/folderRounded.png">$INFO[ListItem.icon]</texture>
+						<bordertexture border="8">ThumbBorder.png</bordertexture>
+						<bordersize>8</bordersize>
+						<aspectratio>keep</aspectratio>
+					</control>
+				</focusedlayout>
+<!-- 				<itemlayout height="40">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>370</width>
+						<height>100</height>
+						<texture border="5">button-nofocus.png</texture>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>0</top>
+						<width>350</width>
+						<height>40</height>
+						<font>font12_title</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<selectedcolor>selected</selectedcolor>
+						<info>ListItem.Label</info>
+					</control>
+				</itemlayout>
+				<focusedlayout height="40">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>370</width>
+						<height>120</height>
+						<visible>!Control.HasFocus(450)</visible>
+						<texture border="3">button-nofocus.png</texture>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>370</width>
+						<height>120</height>
+						<visible>Control.HasFocus(450)</visible>
+						<texture border="3">button-focus.png</texture>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>0</top>
+						<width>350</width>
+						<height>40</height>
+						<font>font12_title</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<selectedcolor>selected</selectedcolor>
+						<info>ListItem.Label</info>
+					</control>
+				</focusedlayout> -->
+			</control>
+			<!-- <control type="label">
+				<description>Page label</description>
+				<right>30</right>
+				<top>670</top>
+				<width>350</width>
+				<height>30</height>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<textcolor>grey</textcolor>
+				<label>([COLOR=blue]$INFO[Container(450).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(450).CurrentPage]/$INFO[Container(450).NumPages][/COLOR])</label>
+			</control> -->
+			<control type="label">
+				<description>Page Count Label</description>
+				<right>40</right>
+				<top>550</top>
+				<width>500</width>
+				<font>font36</font>
+				<textcolor>white</textcolor>
+				<scroll>false</scroll>
+				<align>right</align>
+				<label>$INFO[Container(450).CurrentItem] [COLOR=lightblue]| $INFO[Container(450).NumItems][/COLOR]</label>
+				<include>Window_OpenClose_Animation</include>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,35 @@
+[B]0.0.8[/B]
+
+- Update the Onscreen Keyboard
+
+[B]0.0.7[/B]
+
+- Fix Fonts
+
+[B]0.0.6[/B]
+
+- Update Favorites to the home menu
+- Add Weather to home menu
+- Update the View Weather on the home menu to go to Weather
+
+[B]0.0.5[/B]
+
+- Add Favorites to the home menu
+- Update the display for when favorites is clicked
+
+[B]0.0.4[/B]
+
+- Updated home menu icons
+- Moved Radio to Music home menu item
+- Added Visibility change to home menu
+
+[B]0.0.3[/B]
+
+- Updated some of the library views.
+- Removed a view that isn't ready and gets in the way.
+- Removed Radio as an option for the time being.
+- Started work on the menu edit but nowhere close to being done
+
+[B]0.0.2[/B]
+
+- Alpha Commit to the SVN

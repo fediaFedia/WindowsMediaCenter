@@ -1,0 +1,843 @@
+	<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+<include name="HomeMenu">
+	
+	<control type="group">
+
+		
+			<depth>DepthMenu</depth>
+			<top>125</top>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="225" />
+				<effect type="fade" start="0" end="100" time="225" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="225" />
+				<effect type="fade" start="100" end="0" time="225" />
+			</animation>
+			
+
+			<control type="fixedlist" id="90007">
+			
+				<include>HomeSubMenuBase</include>
+				<include>VisibleFadeEffect</include>
+				<visible>Container(9000).HasFocus(7)</visible>
+			
+				<content>
+					<item id="1">
+						<label>location</label>
+						<onclick>Weather.LocationNext</onclick>
+								<icon>homeIcons/weather.png</icon>
+						<property name="unfocusedIcon">homeIcons/weatherNoFocus.png</property>
+					</item>
+					<item id="2">
+						<label>view weather</label>
+						<onclick condition="!String.IsEmpty(Weather.Plugin)">ActivateWindow(Weather)</onclick>
+						<onclick condition="String.IsEmpty(Weather.Plugin)">ActivateWindow(servicesettings,weather)</onclick>
+						<icon>homeIcons/weather.png</icon>
+						<property name="unfocusedIcon">homeIcons/weatherNoFocus.png</property>
+					</item>
+					<item id="3">
+						<label>add-ons</label>
+						<onclick>ActivateWindow(addonbrowser,addons://user/weather/)</onclick>
+								<icon>homeIcons/weather.png</icon>
+						<property name="unfocusedIcon">homeIcons/weatherNoFocus.png</property>
+					</item>
+				</content>
+			</control>
+			<control type="fixedlist" id="90004">
+				<include>HomeSubMenuBase</include>
+				<include>VisibleFadeEffect</include>
+				<visible>Container(9000).HasFocus(4)</visible>
+				<content>
+					<item id="1">
+						<label>files</label>
+						<onclick>ActivateWindow(filemanager)</onclick>
+						<icon>homeIcons/files.png</icon>
+						<property name="unfocusedIcon">homeIcons/filesNoFocus.png</property>
+					</item>
+					<item id="2">
+						<label>picture library</label>
+						<icon>win7/STARTMENU.QUICKLINK.PICTURES.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.PICTURES.NOFOCUS.png</property>
+							<onclick>ActivateWindow(Pictures)</onclick>
+					</item>
+					<item id="3">
+						<label>play favorites</label>
+						<icon>win7/STARTMENU.QUICKLINK.PICTURES.PLAYFAVS.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.PICTURES.PLAYFAVS.NOFOCUS.png</property>
+						<onclick>RecursiveSlideshow($INFO[Skin.String(PicturesSlideshowPath)],random)</onclick>
+					</item>
+					<item id="4">
+						<label>video library</label>
+						<icon>win7/STARTMENU.QUICKLINK.VIDEOS.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.VIDEOS.NOFOCUS.png</property>
+						<onclick>ActivateWindow(Videos,sources://video/,return)</onclick>
+					</item>
+				</content>
+			</control>
+			<control type="fixedlist" id="90014">
+				<include>HomeSubMenuBase</include>
+				<include>VisibleFadeEffect</include>
+				<visible>Container(9000).HasFocus(14)</visible>
+				<content>
+					<item id="1">
+						<label>add games</label>
+						<icon>vista/GAMES.png</icon>
+						<property name="unfocusedIcon">vista/ADD.UNFOCUS.png</property>
+					</item>
+					<item id="2">
+						<label>play games</label>
+						<icon>vista/EXTRAS.FOCUS.PNG</icon>
+						<property name="unfocusedIcon">vista/EXTRAS.NOFOCUS.PNG</property>
+					</item>
+					
+		
+					<item id="2">
+						<label>view weather</label>
+						<onclick condition="!String.IsEmpty(Weather.Plugin)">ActivateWindow(Weather)</onclick>
+						<onclick condition="String.IsEmpty(Weather.Plugin)">ActivateWindow(servicesettings,weather)</onclick>
+						<icon>vista/weather.png</icon>
+						<property name="unfocusedIcon">vista/weatherNoFocus.png</property>
+					</item>
+				<item id="6">
+						<label>all add-ons</label>
+						<onclick>ActivateWindow(addonbrowser,addons://user/all/)</onclick>
+					<icon>vista/EXTRAS.FOCUS.PNG</icon>
+						<property name="unfocusedIcon">vista/EXTRAS.NOFOCUS.PNG</property>
+					</item>
+					
+					<item id="1">
+						<label>get add-ons</label>
+						<onclick>ActivateWindow(addonbrowser,addons://install/)</onclick>
+							<icon>vista/ADDON.FOCUS.PNG</icon>
+						<property name="unfocusedIcon">vista/ADDON.NOFOCUS.PNG</property>
+					</item>
+					
+		
+											<item id="1">
+						<label>weather location</label>
+						<onclick>Weather.LocationNext</onclick>
+									<icon>vista/weather.png</icon>
+						<property name="unfocusedIcon">vista/weatherNoFocus.png</property>
+					</item>
+				</content>
+			</control>
+			<control type="fixedlist" id="90012">
+				<include>HomeSubMenuBase</include>
+				<include>VisibleFadeEffect</include>
+				<visible>Container(9000).HasFocus(12)</visible>
+				<content>
+
+					<item id="1">
+						<label>channels</label>
+						<onclick>ActivateWindow(TVChannels)</onclick>
+						<icon>vista/GUIDE.FOCUS.PNG</icon>
+						<property name="unfocusedIcon">vista/GUIDE.NOFOCUS.PNG</property>
+						<visible>Skin.HasSetting(tvSubmenuChannels)</visible>
+					</item>
+					<item id="2">
+						<label>recorded tv</label>
+						<onclick>ActivateWindow(TVRecordings)</onclick>
+						<icon>win7/STARTMENU.QUICKLINK.RECORDEDTV.FOCUS.png</icon>
+						<property name="unfocusedIcon">vista/RECORDEDTV.NOFOCUS.png</property>
+					</item>
+					<item id="3">
+						<label>guide</label>
+						<onclick>ActivateWindow(TVGuide)</onclick>
+						<icon>win7/STARTMENU.QUICKLINK.GUIDE.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.GUIDE.NOFOCUS.png</property>
+						<visible>Skin.HasSetting(tvSubmenuGuide)</visible>
+					</item>
+					<item id="4">
+						<label>live tv</label>
+						<onclick>Action(PlayPvrTV)</onclick>
+						<icon>win7/STARTMENU.QUICKLINK.LIVETV.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.LIVETV.NOFOCUS.png</property>
+						<visible>Skin.HasSetting(tvSubmenuLiveTV)</visible>
+					</item>
+					<item id="5">
+						<label>live tv setup</label>
+						<icon>win7/STARTMENU.QUICKLINK.SETUPTV.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.SETUPTV.NOFOCUS.png</property>
+						<onclick>ActivateWindow(10021)</onclick>
+						<visible>Skin.HasSetting(tvSubmenuLiveTVSetup)</visible>
+					</item>
+				</content>
+			</control>
+			<control type="fixedlist" id="90002">
+				<include>HomeSubMenuBase</include>
+				<include>VisibleFadeEffect</include>
+				<visible>Container(9000).HasFocus(2)</visible>
+				 <!-- Merged with Pictures + Videos
+				<content>
+					<item id="1">
+						<label>files</label>
+						<onclick>ActivateWindow(Videos,sources://video/,return)</onclick>
+						<icon>homeIcons/files.png</icon>
+						<property name="unfocusedIcon">homeIcons/filesNoFocus.png</property>
+					</item>
+					<item id="2">
+						<label>playlists</label>
+						<onclick>ActivateWindow(Videos,special://videoplaylists/,return)</onclick>
+						<icon>homeIcons/playlist.png</icon>
+						<property name="unfocusedIcon">homeIcons/playlistNoFocus.png</property>
+					</item>
+					<item id="3">
+						<label>video add-ons</label>
+						<onclick>ActivateWindow(Videos,addons://sources/video/)</onclick>
+						<icon>homeIcons/videoAddons.png</icon>
+						<property name="unfocusedIcon">homeIcons/videoAddonsNoFocus.png</property>
+					</item>
+					<item id="4">
+						<label>movies</label>
+						<onclick>ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
+						<icon>homeIcons/movieLibrary.png</icon>
+						<property name="unfocusedIcon">homeIcons/movieLibraryNoFocus.png</property>
+					</item>
+					<item id="5">
+						<label>tv shows</label>
+						<onclick>ActivateWindow(Videos,TvShowTitles,return)</onclick>
+						<icon>homeIcons/TVLibrary.png</icon>
+						<property name="unfocusedIcon">homeIcons/TVLibraryNoFocus.png</property>
+					</item>
+				</content> -->
+				
+				
+			</control>
+			
+						<!-- ID-19 -->
+						<control type="fixedlist" id="90019">
+						
+							 <!-- Fix workaround for first element -->
+				<include>HomeSubMenuBase</include>
+				<include>VisibleFadeEffect</include>
+				<visible>Container(9000).HasFocus(19)</visible>
+				<content>
+					<item id="1">
+						<label>games library</label> <!-- <label>all $LOCALIZE[1036]</label> -->
+						<onclick>ActivateWindow(addonbrowser,addons://user/all/)</onclick>
+						<icon>win7/STARTMENU.QUICKLINK.EXTRAS.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.EXTRAS.NOFOCUS.png</property>
+					</item>
+					
+										<item id="1">
+						<label>add games</label>
+						<icon>vista/GAMES.png</icon>
+						<property name="unfocusedIcon">vista/ADD.UNFOCUS.png</property>
+					</item>
+					<item id="2">
+						<label>play games</label>
+						<icon>vista/EXTRAS.FOCUS.PNG</icon>
+						<property name="unfocusedIcon">vista/EXTRAS.NOFOCUS.PNG</property>
+					</item>
+				</content>
+				<content>favourites://</content>
+			</control>
+			
+			<!-- ID-11 -->
+						<control type="fixedlist" id="90016">
+						
+							 <!-- Fix workaround for first element -->
+				<include>HomeSubMenuBase</include>
+				<include>VisibleFadeEffect</include>
+				<visible>Container(9000).HasFocus(16)</visible>
+				<content>
+					<item id="1">
+						<label>extras library</label> <!-- <label>all $LOCALIZE[1036]</label> -->
+						<onclick>ActivateWindow(addonbrowser,addons://user/all/)</onclick>
+						<icon>win7/STARTMENU.QUICKLINK.EXTRAS.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.EXTRAS.NOFOCUS.png</property>
+					</item>
+	
+				</content>
+				<content>favourites://</content>
+			</control>
+			
+			
+			<control type="fixedlist" id="90010">
+			
+				<include>HomeSubMenuBase</include>
+				<include>VisibleFadeEffect</include>
+				<visible>Container(9000).HasFocus(10)</visible>
+				<content>
+					<item id="1">
+						<label>search</label>
+						<icon>homeIcons/searchMovies.png</icon>
+						<onclick>VideoLibrary.Search</onclick>
+						<property name="unfocusedIcon">homeIcons/searchNoFocus.png</property>
+							<visible>Skin.HasSetting(moviesSubmenuSearch)</visible>
+					</item>
+				
+					<item id="2">
+						<label>movie library</label>
+						<onclick>ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
+						<icon>win7/STARTMENU.QUICKLINK.MOVIES.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.MOVIES.NOFOCUS.png</property>
+					</item>
+					
+					<item id="3">
+						<label>31958</label>
+						<onclick>PlayDVD()</onclick>
+						<icon/>
+						<thumb/>
+						<icon>win7/STARTMENU.QUICKLINK.PLAYDVD.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.PLAYDVD.NOFOCUS.png</property>
+						<property name="focusId">$NUMBER[90006]</property>
+						<visible>Skin.HasSetting(moviesSubmenuPlayDisc)</visible>
+					</item>
+					
+					
+					<item id="4">
+						<label>in theaters</label>
+						<onclick>ActivateWindow(Videos,plugin://script.embuary.info/movie/now_playing,return)</onclick>
+						<icon>vista/inTheaters.png</icon>
+						<property name="unfocusedIcon">vista/inTheatersNoFocus.png</property>
+						<visible>Skin.HasSetting(moviesSubmenuInTheaters)</visible>
+					</item>
+					<item id="5">
+						<label>person library</label>
+						<onclick>ActivateWindow(Videos,MovieActors,return)</onclick>
+						<icon>homeIcons/people.png</icon>
+						<property name="unfocusedIcon">homeIcons/peopleNoFocus.png</property>
+						<visible>Skin.HasSetting(moviesSubmenuPersonLibrary)</visible>
+					</item>
+				</content>
+			</control>
+			<control type="fixedlist" id="90011">
+				<include>HomeSubMenuBase</include>
+				<include>VisibleFadeEffect</include>
+				<visible>Container(9000).HasFocus(11)</visible>
+				<content>
+					<item id="1">
+						<label>search</label>
+						<icon>vista/SEARCH.TV.FOCUS.png</icon>
+						<property name="unfocusedIcon">homeIcons/searchNoFocus.png</property>
+					</item>
+					<item id="2">
+						<label>tv series library</label>
+						<onclick>ActivateWindow(Videos,TvShowTitles,return)</onclick>
+						<icon>win7/STARTMENU.QUICKLINK.MOVIES.GUIDE.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.MOVIES.GUIDE.NOFOCUS.png</property>
+					</item>
+					<item id="2">
+						<label>tv calendar</label>
+						<onclick>ActivateWindow(Videos,TvShowTitles,return)</onclick>
+						<icon>vista/SCORES.FOCUS.png</icon>
+						<property name="unfocusedIcon">vista/SCORES.NOFOCUS.png</property>
+					</item>
+					<item id="3">
+						<label>person library</label>
+						<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
+						<icon>homeIcons/people.png</icon>
+						<property name="unfocusedIcon">homeIcons/peopleNoFocus.png</property>
+					</item>
+				</content>
+			</control>
+			<!-- <control type="fixedlist" id="90015">
+				<include>HomeSubMenuBase</include>
+				<include>VisibleFadeEffect</include>
+				<visible>Container(9000).HasFocus(15)</visible>
+				<content>plugin://script.embuary.helper/?info=getnextup</content>
+			</control> -->
+			<control type="fixedlist" id="90003">
+				<include>HomeSubMenuBase</include>
+				<include>VisibleFadeEffect</include>
+				<visible>Container(9000).HasFocus(3)</visible>
+				<content>
+					<item id="1">
+						<label>more music</label>
+						<onclick>ActivateWindow(addonbrowser,addons://repos/audio/)</onclick>
+						<icon>homeIcons/files.png</icon>
+						<property name="unfocusedIcon">vista\PLAYLIST.NOFOCUS.png</property>
+						<visible>Skin.HasSetting(musicSubmenuMoreMusic)</visible>
+					</item>
+					<item id="2">
+						<label>music library</label>
+						<onclick>ActivateWindow(music,musicdb://albums/,return)</onclick>
+						<icon>win7/STARTMENU.QUICKLINK.MUSIC.FOCUS.png</icon>
+						<property name="unfocusedIcon">homeIcons/songsNoFocus.png</property>
+					</item>
+					<item id="3">
+						<label>play favorites</label>
+						<onclick>PlayMedia(musicdb://top100/songs/)</onclick>
+						<onclick>ActivateWindow(MusicPlaylist)</onclick>
+						<icon>win7/STARTMENU.QUICKLINK.MUSIC.PLAYFAVS.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.MUSIC.PLAYFAVS.NOFOCUS.png</property>
+						<visible>Skin.HasSetting(musicSubmenuFavorites)</visible>
+					</item>
+					<item id="4">
+						<label>playlists</label>
+						<property name="xspPath">special://musicplaylists/</property>
+						<onclick>ActivateWindow(Music)</onclick>
+						<onclick>Container.Update(special://musicplaylists/)</onclick>
+						<icon>win7/STARTMENU.QUICKLINK.PLAYLISTS.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.PLAYLISTS.NOFOCUS.png</property>
+						<visible>Skin.HasSetting(musicSubmenuPlaylists)</visible>
+					</item>
+					<item id="5">
+						<label>music videos</label>
+						<onclick>ActivateWindow(Videos,videodb://musicvideos/titles/)</onclick>
+						<icon>win7/STARTMENU.QUICKLINK.MUSICVIDEOS.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.MUSICVIDEOS.NOFOCUS.png</property>
+						<visible>Skin.HasSetting(musicSubmenuMusicVideos)</visible>
+					</item>
+
+					<item id="6">
+						<label>radio</label>
+						<onclick>ActivateWindow(RadioChannels)</onclick>
+						<icon>homeIcons/radio.png</icon>
+						<property name="unfocusedIcon">homeIcons/radioNoFocus.png</property>
+						<visible>Skin.HasSetting(musicSubmenuRadio)</visible>
+					</item>
+					<item id="7">
+						<label>internet radio</label>
+						<onclick>ActivateWindow(10025,plugin://plugin.audio.shoutcast/)</onclick>
+						<icon>homeIcons/radio.png</icon>
+						<property name="unfocusedIcon">homeIcons/radioNoFocus.png</property>
+						<visible>Skin.HasSetting(musicSubmenuInternetRadio)</visible>
+					</item>
+					<item id="8">
+						<label>search</label>
+						<onclick>ActivateWindow(Music)</onclick>
+						<onclick>ActivateWindow(filter)</onclick>
+						<icon>win7/STARTMENU.QUICKLINK.SEARCH.MUSIC.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.SEARCH.MUSIC.NOFOCUS.png</property>
+						<visible>Skin.HasSetting(musicSubmenuSearch)</visible>
+					</item>
+				</content>
+			</control>
+			<control type="fixedlist" id="90017">
+				<include>HomeSubMenuBase</include>
+				<include>VisibleFadeEffect</include>
+				<visible>Container(9000).HasFocus(17)</visible>
+				<content>
+					<item id="1">
+						<label>$INFO[MusicPlayer.Title]</label>
+						<label2>$INFO[MusicPlayer.Artist]</label2>
+						<onclick>ActivateWindow(visualisation)</onclick>
+						<icon>$INFO[Player.Art(thumb)]</icon> 
+						<!-- <texture fallback="DefaultAlbumCover.png"></texture> -->
+						<!-- Now playing dynamic content -->
+						<property name="unfocusedIcon">homeIcons/filesNoFocus.png</property>
+					</item>
+				</content>
+			</control>
+							<control type="videowindow">
+				<depth>DepthBackground</depth>
+				<left>300</left>
+				<top>530</top>
+				<width>400</width>
+				<height>205</height>
+				<visible>Player.HasVideo + Container(9000).HasFocus(18)</visible>
+			</control>
+			
+			
+						<control type="fixedlist" id="90018">
+				<include>HomeSubMenuBase</include>
+				<include>VisibleFadeEffect</include>
+				<visible>Container(9000).HasFocus(18)</visible>
+				
+				<content>
+				
+					<item id="1">
+						<label>$INFO[VideoPlayer.Title]</label>
+						<label2>$INFO[VideoPlayer.Time]</label2>
+	<onclick>ActivateWindow(fullscreenvideo)</onclick>
+						<icon></icon> 
+						<!-- <texture fallback="DefaultAlbumCover.png"></texture> -->
+						<!-- Now playing dynamic content -->
+						<property name="unfocusedIcon">homeIcons/filesNoFocus.png</property>
+					</item>
+				</content>
+			</control>
+			<!-- moved to extras 
+			<control type="fixedlist" id="90001">
+				<include>HomeSubMenuBase</include>
+				<include>VisibleFadeEffect</include>
+				<visible>Container(9000).HasFocus(1)</visible>
+				<content>
+					<item id="1">
+						<label>download add-ons</label>
+						<onclick>ActivateWindow(addonbrowser,addons://install/)</onclick>
+						<icon>homeIcons/download.png</icon>
+						<property name="unfocusedIcon">homeIcons/downloadNoFocus.png</property>
+					</item>
+					<item id="2">
+						<label>video add-ons</label>
+						<onclick>ActivateWindow(addonbrowser,addons://user/xbmc.addon.video/)</onclick>
+						<icon>homeIcons/videoAddons.png</icon>
+						<property name="unfocusedIcon">homeIcons/videoAddonsNoFocus.png</property>
+					</item>
+					<item id="3">
+						<label>program add-ons</label>
+						<onclick>ActivateWindow(addonbrowser,addons://user/xbmc.addon.executable/)</onclick>
+						<icon>homeIcons/programAddons.png</icon>
+						<property name="unfocusedIcon">homeIcons/programAddonsNoFocus.png</property>
+					</item>
+					<item id="4">
+						<label>music add-ons</label>
+						<onclick>ActivateWindow(addonbrowser,addons://user/xbmc.addon.audio/)</onclick>
+						<icon>homeIcons/musicAddons.png</icon>
+						<property name="unfocusedIcon">homeIcons/musicAddonsNoFocus.png</property>
+					</item>
+					<item id="5">
+						<label>game add-ons</label>
+						<onclick>ActivateWindow(addonbrowser,addons://user/xbmc.addon.game/)</onclick>
+						<icon>homeIcons/gameAddons.png</icon>
+						<property name="unfocusedIcon">homeIcons/gameAddonsNoFocus.png</property>
+					</item>
+					<item id="6">
+						<label>all add-ons</label>
+						<onclick>ActivateWindow(addonbrowser,addons://user/all/)</onclick>
+						<icon>homeIcons/addons.png</icon>
+						<property name="unfocusedIcon">homeIcons/addonsNoFocus.png</property>
+					</item>
+				</content>
+			</control> -->
+			<!-- <control type="fixedlist" id="90015">
+				<include>HomeSubMenuBase</include>
+				<include>VisibleFadeEffect</include>
+				<visible>Container(9000).HasFocus(15)</visible>
+				<content target="videos">plugin://plugin.video.youtube/kodion/search/list/</content>
+			</control> -->
+
+<!-- ID-12 -->
+			<control type="fixedlist" id="90009">
+					<!-- Fix Workaround for last element -->
+				<include>HomeSubMenuBase</include>
+				<include>VisibleFadeEffect</include>
+				<visible>Container(9000).HasFocus(5)</visible>
+				<content>
+					<item id="1">
+						<label>13005</label>
+						<onclick>ActivateWindow(ShutdownMenu)</onclick>
+						<icon>win7/STARTMENU.QUICKLINK.SHUTDOWN.FOCUS.png</icon>
+						<visible>String.IsEqual(Window.Property(MediaOnly),false)</visible>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.SHUTDOWN.NOFOCUS.png</property>
+										<visible>Skin.HasSetting(tasksSubmenuShutdown)</visible>
+					</item>
+					<item id="2">
+						<label>settings</label>
+						<onclick>ActivateWindow(10004)</onclick>
+						<icon>win7/STARTMENU.QUICKLINK.SETTINGS.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.SETTINGS.NOFOCUS.png</property>
+					
+					</item>
+
+					<item id="3">
+						<label>sync</label>
+						<onclick>ActivateWindow(10035)</onclick>
+						<icon>win7/STARTMENU.QUICKLINK.SYNC.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.SYNC.NOFOCUS.png</property>
+										<visible>Skin.HasSetting(tasksSubmenuSync)</visible>
+					</item>
+					<item id="4">
+						<label>burn cd/dvd</label>
+						<onclick>ActivateWindow(10035)</onclick>
+						<icon>win7/STARTMENU.QUICKLINK.BURNCD.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.PLAYDVD.NOFOCUS.png</property>
+										<visible>Skin.HasSetting(tasksSubmenuBurn)</visible>
+					</item>
+					
+					<item id="5">
+						<label>add extender</label>
+						<onclick>ActivateWindow(10035)</onclick>
+						<icon>win7/STARTMENU.QUICKLINK.ADDEXTENDER.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.ADDEXTENDER.NOFOCUS.png</property>
+					<visible>Skin.HasSetting(tasksSubmenuAddExtender)</visible>
+					</item>
+
+					<item id="6">
+						<label>media only</label>
+						<onclick>SetProperty(MediaOnlyConfirm,true)</onclick>
+						<onclick>SetFocus(660)</onclick>
+						<icon>win7/STARTMENU.QUICKLINK.MEDIAONLY.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.MEDIAONLY.NOFOCUS.png</property>
+					<visible>String.IsEqual(Window.Property(MediaOnly),false) + Skin.HasSetting(tasksSubmenuMediaOnly)</visible>
+					</item>
+			
+					<item id="7">
+						<label>exit media only</label>
+						<onclick>SetProperty(MediaOnly,false)</onclick>
+						<onclick>ReloadSkin()</onclick>
+						<icon>win7/STARTMENU.QUICKLINK.MEDIAONLY.FOCUS.png</icon>
+						<property name="unfocusedIcon">win7/STARTMENU.QUICKLINK.MEDIAONLY.NOFOCUS.png</property>
+					<visible>String.IsEqual(Window.Property(MediaOnly),true) + Skin.HasSetting(tasksSubmenuMediaOnly)</visible>
+					</item>
+					
+					
+
+<!--
+					<item id="4">
+						<label>skin settings</label>
+						<onclick>ActivateWindow(10035)</onclick>
+						<icon>vista/skinSettings.png</icon>
+						<property name="unfocusedIcon">homeIcons/skinSettingsNoFocus.png</property>
+					</item>
+					
+					
+					
+			<item id="5">
+						<label>system information</label>
+						<onclick>ActivateWindow(10016)</onclick>
+						<icon>homeIcons/systemInformation.png</icon>
+						<property name="unfocusedIcon">homeIcons/systemInformationNoFocus.png</property>
+					</item> 
+					
+					
+				 <item id="6">
+						<label>interface</label>
+						<onclick>ActivateWindow(10032)</onclick>
+						<icon>homeIcons/interface.png</icon>
+						<property name="unfocusedIcon">homeIcons/interfaceNoFocus.png</property>
+					</item>
+					<item id="7">
+						<label>player</label>
+						<onclick>ActivateWindow(10030)</onclick>
+						<icon>homeIcons/allSettings.png</icon>
+						<property name="unfocusedIcon">homeIcons/allSettingsNoFocus.png</property>
+					</item> -->
+				</content>
+			</control>
+
+
+
+			<control type="fixedlist" id="9000">
+				<left>240</left>
+				<top>-45</top>
+				<width>1500</width>
+				<height>1000</height>
+				<onleft>601</onleft>
+				<onright>9001</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				
+				<pagecontrol/>
+				<scrolltime>300</scrolltime>
+				<focusposition>4</focusposition>
+<onfocus>SetFocus($INFO[ListItem.Property(focusId)])</onfocus>
+				<orientation>Vertical</orientation>
+
+				<itemlayout height="100" width="800">
+				<!-- ID-9 -->
+					<control type="label">
+						<left>100</left>
+						<top>30</top>
+						<width>800</width>
+						<height>100</height>
+						<font>font_MainMenu2</font>
+						<textcolor>lightblueTransparent</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="420" width="800">
+				<!-- ID-10 -->
+					<control type="label">
+						<left>75</left>
+						<top>40</top>
+						<width>800</width>
+						<height>150</height>
+						<font>font_MainMenu</font>
+						<textcolor>white</textcolor>
+						<align>left</align>
+						<aligny>top</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+				<content>
+						
+					<item id="16">
+						<label>Extras</label>
+						<!--<label>$LOCALIZE[1036]</label>-->
+						<icon/>
+						<thumb/>
+						<visible>Skin.HasSetting(favoritesVisible)</visible>
+						<property name="focusId">$NUMBER[90016]</property>
+						<!-- Workaround for mouse -->
+						<onclick condition="Container(90016).HasFocus(1)">ActivateWindow(addonbrowser,addons://user/all/)</onclick>
+						<onclick condition="Container(90016).HasFocus(2)">ActivateWindow(TVChannels)</onclick>
+						<!-- <onclick>ActivateWindow(addonbrowser,addons://user/all/)</onclick> -->
+					</item>
+					
+					<item id="19">
+						<label>Games</label>
+						<icon/>
+						<thumb/>
+						<visible>Skin.HasSetting(gamesVisible)</visible>
+						<property name="focusId">$NUMBER[90019]</property>
+						<onclick>ActivateWindow(addonbrowser,addons://user/all/)</onclick>
+					</item>
+					
+					<!-- Weather moved to extras-->
+				<item id="7">
+						<label>31950</label> 
+						<onclick condition="!String.IsEmpty(Weather.Plugin)">ActivateWindow(Weather)</onclick>
+						<onclick condition="String.IsEmpty(Weather.Plugin)">ActivateWindow(servicesettings,weather)</onclick>
+						<icon/>
+						<thumb/>
+						<visible>Skin.HasSetting(weatherVisible)</visible>
+						<property name="focusId">$NUMBER[90007]</property>
+					</item> 
+
+					<item id="14">
+						<label>Extras</label> <!-- 31001 Games -->
+						<onclick>ActivateWindow(addonbrowser,addons://user/all/)</onclick>
+						<icon/>
+						<thumb/>
+						<visible>0</visible>
+						<property name="focusId">$NUMBER[90014]</property>
+					</item>
+
+
+				<item id="11">
+						<label>36903</label>  <!-- TV Shows -->
+						
+
+						<onclick condition="System.IsMaster | !Skin.HasSetting(HomeMenuTVShowUsePlaylist)">ActivateWindow(Videos,TVShowTitles,return)</onclick>
+						<onclick condition="!System.IsMaster + Skin.HasSetting(HomeMenuTVShowUsePlaylist)">ActivateWindow(Videos,$INFO[Skin.String(HomeMenuTVShowPlaylist)],return)</onclick>
+						<icon/>
+						<thumb/>
+						<visible>Skin.HasSetting(tvShowsVisible)</visible>
+						<property name="focusId">$NUMBER[90011]</property>
+					</item>
+	
+					<item id="4">
+						<label>$LOCALIZE[14217] + $LOCALIZE[14215]</label> <!-- Pictures + Videos -->
+		
+		
+						
+						<!-- Workaround for mouse -->
+						<onclick condition="Container(90004).HasFocus(1)">ActivateWindow(filemanager)</onclick>
+						<onclick condition="Container(90004).HasFocus(2)">ActivateWindow(Pictures)</onclick>
+						<onclick condition="Container(90004).HasFocus(3)">RecursiveSlideshow($INFO[Skin.String(PicturesSlideshowPath)],random)</onclick>
+						<onclick condition="Container(90004).HasFocus(4)">ActivateWindow(Videos,sources://video/,return)</onclick>
+						
+						<icon/>
+						<thumb/>
+						<visible>Skin.HasSetting(picturesVisible)</visible>
+						<property name="focusId">$NUMBER[90004]</property>
+					</item>
+					
+					<item id="3">
+						<label>2</label> <!-- Music -->
+
+
+						<!-- Workaround for mouse -->
+						<onclick condition="Container(90003).HasFocus(1)">ActivateWindow(addonbrowser,addons://sources/audio/)</onclick>
+						<onclick condition="Container(90003).HasFocus(2)">ActivateWindow(music,musicdb://albums/,return)</onclick>
+						<onclick condition="Container(90003).HasFocus(3)">PlayMedia(musicdb://top100/songs/)</onclick>
+						<onclick condition="Container(90003).HasFocus(4)">ActivateWindow(Music)</onclick>
+						<onclick condition="Container(90003).HasFocus(4)">Container.Update(special://musicplaylists/)</onclick>
+						
+						
+						<onclick condition="Container(90003).HasFocus(5)">ActivateWindow(Videos,videodb://musicvideos/titles/)</onclick>
+						<onclick condition="Container(90003).HasFocus(6)">ActivateWindow(RadioChannels)</onclick>
+						<onclick condition="Container(90003).HasFocus(7)">ActivateWindow(10025,plugin://plugin.audio.shoutcast/)</onclick>
+						
+						<onclick condition="Container(90003).HasFocus(8)">ActivateWindow(Music)</onclick>
+						<onclick condition="Container(90003).HasFocus(8)">ActivateWindow(Filter)</onclick>
+						
+						<icon/>
+						<thumb/>
+						<visible>Skin.HasSetting(musicVisible)</visible>
+						<property name="focusId">$NUMBER[90003]</property>
+					</item>
+
+
+					<item id="17">
+						<label>31040</label>  <!-- Now Playing -->
+						<visible>Player.HasAudio + !Skin.HasSetting(homepageMusicinfo) + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
+						<property name="focusId">$NUMBER[90017]</property>
+						<onclick>ActivateWindow(visualisation)</onclick>
+					</item>
+					
+					<item id="18">
+						<label>31040</label>  <!-- Now Playing -->
+						<visible>Player.HasVideo</visible>
+						<property name="focusId">$NUMBER[90018]</property>
+							<onclick>ActivateWindow(fullscreenvideo)</onclick>
+					</item>
+
+					<item id="6">
+						<label>31958</label>
+						<onclick>PlayDVD()</onclick>
+						<icon/>
+						<thumb/>
+						<visible>System.HasMediaDVD | System.HasMediaAudioCD + </visible>
+						<property name="focusId">$NUMBER[90006]</property>
+					</item>
+					
+					
+					<item id="10">
+						<label>342</label>  <!-- MOVIES -->
+						
+						<!-- Might be interesting for later
+						<onclick condition="System.IsMaster | !Skin.HasSetting(HomeMenuMovieUsePlaylist)">ActivateWindow(Videos,MovieTitles,return)</onclick>
+						<onclick condition="!System.IsMaster + Skin.HasSetting(HomeMenuMovieUsePlaylist)">ActivateWindow(Videos,$INFO[Skin.String(HomeMenuMoviePlaylist)],return)</onclick>
+						-->
+						
+						<!-- Workaround for mouse -->
+						<onclick condition="Container(90010).HasFocus(1)">VideoLibrary.Search</onclick>
+						<onclick condition="Container(90010).HasFocus(2)">ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
+						<onclick condition="Container(90010).HasFocus(3)">PlayDVD()</onclick>
+						<onclick condition="Container(90010).HasFocus(4)">ActivateWindow(Videos,plugin://script.embuary.info/movie/now_playing,return)</onclick>
+						<onclick condition="Container(90010).HasFocus(5)">ActivateWindow(Videos,MovieActors,return)</onclick>
+						
+						<icon/>
+						<thumb/>
+						<visible>Skin.HasSetting(moviesVisible)</visible>
+						<property name="focusId">$NUMBER[90010]</property>
+					</item>
+					
+					
+					<item id="12">
+						<label>31952</label> <!-- TV -->
+
+						<!-- Workaround for mouse -->
+						<onclick condition="Container(90012).HasFocus(1)">ActivateWindow(TVChannels)</onclick>
+						<onclick condition="Container(90012).HasFocus(2)">ActivateWindow(TVRecordings)</onclick>
+						<onclick condition="Container(90012).HasFocus(3)">ActivateWindow(TVGuide)</onclick>
+						<onclick condition="Container(90012).HasFocus(4)">Action(PlayPvrTV)</onclick>
+						<onclick condition="Container(90012).HasFocus(5)">ActivateWindow(10021)</onclick>
+						
+						
+						<icon/>
+						<thumb/>
+						<visible>Skin.HasSetting(tvVisible)</visible>
+						<property name="focusId">$NUMBER[90012]</property>
+					</item>
+					
+
+					<item id="5">
+						<label>Tasks</label> <!-- System Settings -->
+									<!-- Workaround for mouse -->
+						<onclick condition="Container(90009).HasFocus(1)">ActivateWindow(ShutdownMenu)</onclick>
+						<onclick condition="Container(90009).HasFocus(2)">ActivateWindow(Settings)</onclick>
+						<onclick condition="Container(90009).HasFocus(3)">ActivateWindow(Sync)</onclick>
+						<onclick condition="Container(90009).HasFocus(4)">Action(Burn)</onclick>
+						<onclick condition="Container(90009).HasFocus(5)">ActivateWindow(Extender)</onclick>
+						
+						
+						<onclick condition="Container(90009).HasFocus(6)">SetProperty(MediaOnlyConfirm,true)</onclick>
+						<onclick condition="Container(90009).HasFocus(6)">SetFocus(660)</onclick>
+						
+						
+						<onclick condition="Container(90009).HasFocus(7)">SetProperty(MediaOnly,false)</onclick>
+						<onclick condition="Container(90009).HasFocus(7)">ReloadSkin()</onclick>
+						<icon/>
+						<thumb/>
+						<visible>[!Skin.HasSetting(HomeMenuNoSystemButton) + !System.IsMaster] | System.IsMaster</visible>
+						<property name="focusId">$NUMBER[90009]</property>
+					</item>
+
+					
+				</content>
+			</control>
+		</control>
+	
+				</include>
+</includes>

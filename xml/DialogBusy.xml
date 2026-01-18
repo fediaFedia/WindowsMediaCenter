@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<animation effect="fade" time="75">WindowOpen</animation>
+	<animation effect="fade" time="150">WindowClose</animation>
+	<coordinates>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>
+	<controls>
+		<control type="group">
+			<depth>DepthDialog+</depth>
+			<left>898</left>
+			<top>478</top>
+			<control type="image">
+				<description>background image</description>
+				<left>0</left>
+				<top>0</top>
+				<width>124</width>
+				<height>124</height>
+				<texture>busyBackground.png</texture>
+			</control>
+			<control type="image">
+				<description>Busy animation</description>
+				<left>0</left>
+				<top>0</top>
+				<width>124</width>
+				<height>124</height>
+				<texture>busyNew.png</texture>
+				<aspectratio>keep</aspectratio>
+				<animation effect="rotate" start="0" end="360" center="auto" time="900" loop="true" condition="true">conditional</animation>
+			</control>
+			<control type="label">
+				<description>Busy label</description>
+				<left>60</left>
+				<top>20</top>
+				<width>120</width>
+				<height>32</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$LOCALIZE[31004]</label>
+				<font>font12</font>
+				<visible>false</visible>
+			</control>
+			<control type="progress" id="10">
+				<description>Progressbar</description>
+				<left>20</left>
+				<top>53</top>
+				<width>160</width>
+				<height>8</height>
+			</control>
+		</control>
+	</controls>
+</window>

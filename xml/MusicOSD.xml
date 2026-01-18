@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+
+
+
+
+
+
+	<defaultcontrol always="true">100</defaultcontrol>
+	<onload condition="!MusicPlayer.Content(LiveTV)">SetFocus(70001)</onload>
+	
+	
+	
+	
+	<include>dialogeffect</include>
+	
+	
+	
+	<depth>DepthOSD</depth>
+	
+	
+	
+	<coordinates>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>
+	<controls>
+	
+	
+	
+	
+		<control type="button">
+			<description>Close Window button</description>
+			<left>84r</left>
+			<top>0</top>
+			<width>64</width>
+			<height>32</height>
+			<label/>
+			<font/>
+			<onclick>Dialog.Close(MusicOSD,true)</onclick>
+			<onclick>FullScreen</onclick>
+			<texturefocus>DialogCloseButton-focus.png</texturefocus>
+			<texturenofocus>DialogCloseButton-focus.png</texturenofocus>
+			<animation effect="fade" time="150">VisibleChange</animation>
+			<animation effect="slide" start="0,0" end="-30,0" time="0" condition="Player.Muted">conditional</animation>
+			<visible>false + system.getbool(input.enablemouse) + ![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVRChannelGuide) | Window.IsVisible(PVRRadioRDSInfo) | Window.IsVisible(Addon)]</visible>
+		</control>
+		<control type="slider" id="87">
+			<depth>DepthOSD+</depth>
+			<description>Seek Slider</description>
+			<left>430</left>
+			<top>82r</top>
+			<width>720</width>
+			<height>16</height>
+			<onup>702</onup>
+			<ondown>26</ondown>
+			<action>seek</action>
+			<texturesliderbar>seekslider2.png</texturesliderbar>
+			<textureslidernib>osd_slider_nibNF.png</textureslidernib>
+			<textureslidernibfocus>osd_slider_nib.png</textureslidernibfocus>
+			<animation effect="fade" time="150">VisibleChange</animation>
+			<visible>false + ![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVRChannelGuide) | Window.IsVisible(PVRRadioRDSInfo) | Window.IsVisible(Addon)]</visible>
+		</control>
+		<control type="image">
+			<description>left menu</description>
+			<left>-325</left>
+			<top>-400</top>
+			<width>850</width>
+			<height>2160</height>
+			<texture >win7/NOWPLAYING.MUSIC.LEFTMENU.GRADIENT.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		
+		
+		
+		<control type="list" id="70001">
+			<left>50</left>
+			<top>220</top>
+			<width>350</width>
+			<height>700</height>
+			<onright>100</onright><!-- 
+			<onleft>9000</onleft>
+			<onup>9000</onup>
+			<ondown>9000</ondown> -->
+			<pagecontrol/>
+			<scrolltime>300</scrolltime>
+			<itemlayout height="80" width="300">
+				<control type="label">
+					<left>35</left>
+					<top>0</top>
+					<width>300</width>
+					<height>65</height>
+					<font>font40</font>
+					<textcolor>lightblue</textcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="image">
+					<left>300</left>
+					<top>22</top>
+					<width>29</width>
+					<height>22</height>
+					<texture colordiffuse="whiteTransparentC">checkmark.png</texture>
+					<visible>[!String.IsEmpty(ListItem.Property(isShuffle)) + Playlist.IsRandom] | [!String.IsEmpty(ListItem.Property(isRepeat)) + [Playlist.IsRepeat | Playlist.IsRepeatOne]]</visible>
+				</control>
+				<control type="label">
+					<description>Shown to indicate Repeat Once</description>
+					<left>0</left>
+					<top>0</top>
+					<width>290</width>
+					<height>65</height>
+					<font>font14</font>
+					<textcolor>white</textcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>$NUMBER[1]</label>
+					<visible>!String.IsEmpty(ListItem.Property(isRepeat)) + Playlist.IsRepeatOne</visible>
+				</control>
+			</itemlayout>
+			<focusedlayout height="80" width="350">
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>350</width>
+					<height>70</height>
+					<texture border="10" >win7/GLASSY.BUTTON.FOCUS.png</texture>
+				</control>
+				<control type="label">
+					<left>35</left>
+					<top>0</top>
+					<width>300</width>
+					<height>65</height>
+					<font>font40</font>
+					<textcolor>white</textcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="image">
+					<left>300</left>
+					<top>22</top>
+					<width>29</width>
+					<height>22</height>
+					<texture colordiffuse="whiteTransparentC">checkmark.png</texture>
+					<visible>[!String.IsEmpty(ListItem.Property(isShuffle)) + Playlist.IsRandom] | [!String.IsEmpty(ListItem.Property(isRepeat)) + [Playlist.IsRepeat | Playlist.IsRepeatOne]]</visible>
+				</control>
+				<control type="label">
+					<description>Shown to indicate Repeat Once</description>
+					<left>0</left>
+					<top>0</top>
+					<width>290</width>
+					<height>65</height>
+					<font>font14</font>
+					<textcolor>white</textcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>$NUMBER[1]</label>
+					<visible>!String.IsEmpty(ListItem.Property(isRepeat)) + Playlist.IsRepeatOne</visible>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="6">
+					<label>View Song List</label>
+					<onclick>Close</onclick>
+					<onclick>ActivateWindow(MusicPlaylist)</onclick>
+					<icon/>
+				</item>
+				<item id="1">
+					<label>Visualise</label>
+					<onclick>SendClick(500)</onclick>
+					<icon/>
+				</item>
+				<item id="2">
+					<label>Settings</label>
+					<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+					<icon/>
+				</item>
+						<item id="9">
+					<label>Play Pictures</label>
+					<onclick>Dialog.Close(all,true)</onclick>
+					<onclick>ActivateWindow(pictures)</onclick>
+					<icon/>
+				</item>
+				<item id="4">
+					<label>31128</label>
+					<onclick>Close</onclick>
+					<onclick>RunScript($INFO[Skin.String(LyricScript_Path)])</onclick>
+					<altclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</altclick>
+					<altclick>Close</altclick>
+					<altclick>RunScript($INFO[Skin.String(LyricScript_Path)])</altclick>
+					<icon/>
+				</item>
+				<item id="8">
+					<label>Shuffle</label>
+					<onclick>PlayerControl(Random)</onclick>
+					<icon/>
+					<property name="isShuffle">true</property>
+				</item>
+				<item id="3">
+					<label>Repeat</label>
+					<onclick>PlayerControl(Repeat)</onclick>
+					<property name="isRepeat">true</property>
+				</item><!-- 
+				<item id="4">
+					<label>24001</label>
+					<label2>31433</label2>
+					<onclick>ActivateWindow(AddonBrowser)</onclick>
+					<icon/>
+				</item> -->
+				<!-- <item id="5">
+					<label>14036</label>
+					<label2>31434</label2>
+					<onclick>ActivateWindow(ServiceSettings)</onclick>
+					<icon/>
+				</item>
+				<item id="7">
+					<label>13000</label>
+					<label2>31435</label2>
+					<onclick>ActivateWindow(SystemSettings)</onclick>
+					<icon/>
+				</item> -->
+			</content>
+		</control>
+		
+		<control type="group" >
+		
+					<left>1020</left>
+				<top>1000</top>
+	
+	<include>CommonNowPlaying_Controls</include>
+		
+				</control>
+				
+				
+		<include>MainWindowMouseButtons</include>
+</controls>
+</window>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>1</defaultcontrol>
+	<animation effect="slide" start="0,-85" end="0,0" time="100">WindowOpen</animation>
+	<animation effect="slide" start="0,0" end="0,-85" delay="300" time="100">WindowClose</animation>
+	<controls>
+		<control type="group">
+			<depth>DepthOSD</depth>
+			<left>290r</left>
+			<top>85</top>
+			<include>VisibleFadeEffect</include>
+			<visible>!Player.Muted</visible>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>210</width>
+				<height>110</height>
+				<texture flipy="true" border="20">win7\DialogBack.png</texture>
+				<!-- <bordertexture border="8">ThumbShadow.png</bordertexture>
+				<bordersize>8</bordersize> -->
+			</control>
+			<control type="group">
+				<visible>!player.passthrough</visible>
+				<!-- <control type="image">
+					<description>Lite Volume Logo</description>
+					<left>10</left>
+					<top>0</top>
+					<width>40</width>
+					<height>35</height>
+					<aspectratio>keep</aspectratio>
+					<texture>VolumeIcon.png</texture>
+				</control> -->
+				<control type="label">
+					<description>Volume Number</description>
+					<label>$INFO[Control.GetLabel(1)]</label>
+					<width>210</width>
+					<height>90</height>
+					<font>font40</font>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="progress" id="1">
+					<description>progress control</description>
+					<left>12</left>
+					<top>82</top>
+					<width>185</width>
+					<height>18</height>
+					<info>Player.Volume</info>
+				</control>
+			</control>
+			<control type="group">
+				<visible>player.passthrough</visible>
+				<!-- <control type="image">
+					<description>Lite Volume Logo</description>
+					<left>10</left>
+					<top>0</top>
+					<width>40</width>
+					<height>35</height>
+					<aspectratio>keep</aspectratio>
+					<colordiffuse>CCFF0000</colordiffuse>
+					<texture>VolumeIcon.png</texture>
+				</control> -->
+				<control type="label">
+					<description>Passthrough Label</description>
+					<left>50</left>
+					<top>6</top>
+					<width>230</width>
+					<height>20</height>
+					<label>$LOCALIZE[29802]</label>
+					<font>font10_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+				</control>
+			</control>
+		</control>
+		<control type="image">
+			<left>64r</left>
+			<top>24</top>
+			<width>64</width>
+			<height>64</height>
+			<aspectratio>keep</aspectratio>
+			<texture>osdvolumeMutenf.png</texture>
+			<include>VisibleFadeEffect</include>
+			<visible>Player.Muted</visible>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<onload>ReplaceWindow($INFO[System.StartupWindow])</onload>
+	<controls/>
+	<onload>Sleep(1500)</onload>
+	<!-- <onload>PlayMedia(special://home/media/ding.wav)</onload> -->
+</window>

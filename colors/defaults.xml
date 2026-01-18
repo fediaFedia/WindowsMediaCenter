@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<colors>
+	<color name="white">FFFFFFFF</color>
+	<color name="whiteTransparent">66FFFFFF</color>
+	<color name="whiteTransparent3">33FFFFFF</color>
+	<color name="whiteTransparent6">66FFFFFF</color>
+	<color name="whiteTransparent9">99FFFFFF</color>
+	<color name="whiteTransparentC">CCFFFFFF</color>
+	<color name="noFocus">33FFFFFF</color>
+	<color name="lightblue">FF91d2f9</color>
+		<color name="darkerblue">FF09a0db</color>
+	<color name="lightblueTransparent">6691d2f9</color>
+		<color name="lightblueTransparent2">3391d2f9</color>
+	<color name="listOpaque">CC91d2f9</color>
+	<color name="grey">FFb4b4b4</color>
+	<color name="grey2">FF999999</color>
+	<color name="grey3">FF505050</color>
+	<color name="black">FF000000</color>
+	<color name="blue">FF0084ff</color>
+	<color name="selected">FFEB9E17</color>
+	<color name="invalid">FFFF0000</color>
+	<color name="dialogHeader">FF003366</color>
+	<color name="darkblue">FF0e2e66</color>
+	
+</colors>

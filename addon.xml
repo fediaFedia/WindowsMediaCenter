@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="skin.theGreenButton" version="20.0.10" name="The Green Button" provider-name="Doctor Eggs">
+	<requires>
+		<import addon="xbmc.gui" version="5.17.0"/>
+		<!-- <import addon="script.embuary.helper" version="1.3.6"/>
+		<import addon="script.embuary.info" version="1.2.4"/> -->
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false" effectslowdown="1.0">
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">The Green Button skin by Doctor Eggs</summary>
+		<description lang="en_GB">The Green Button was developed to give Kodi a similar interface to WMC.</description>
+		<disclaimer lang="en_GB">This is an Alpha release. Mouse interaction works, but things get funky when using the mouse.</disclaimer>
+		<platform>all</platform>
+		<license>CC-BY-NC-ND-4.0</license>
+		<forum>https://forum.kodi.tv/showthread.php?tid=370312</forum>
+		<source></source>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+			<screenshot>resources/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshot-03.jpg</screenshot>
+			<screenshot>resources/screenshot-04.jpg</screenshot>
+			<screenshot>resources/screenshot-05.jpg</screenshot>
+			<screenshot>resources/screenshot-06.jpg</screenshot>
+			<screenshot>resources/screenshot-07.jpg</screenshot>
+			<screenshot>resources/screenshot-08.jpg</screenshot>
+			<screenshot>resources/screenshot-09.jpg</screenshot>
+			<screenshot>resources/screenshot-10.jpg</screenshot>
+			<screenshot>resources/screenshot-11.jpg</screenshot>
+			<screenshot>resources/screenshot-12.jpg</screenshot>
+			<screenshot>resources/screenshot-13.jpg</screenshot>
+			<screenshot>resources/screenshot-14.jpg</screenshot>
+		</assets>
+	</extension>
+<!-- 	<extension point="kodi.context.item">
+		<menu id="kodi.core.main">
+			<menu>
+				<label>My submenu</label>
+				<item library="contextitem1.py">
+					<label>Yo?</label>
+					<visible>true</visible>
+				</item>
+				<item library="contextitem2.py">
+					<label>Yo2</label>
+					<visible>true</visible>
+				</item>
+				<menu>
+					<label>Subsubmenu</label>
+					<item library="contextitem3.py">
+						<label>Submenu</label>
+						<visible>true</visible>
+					</item>
+				</menu>
+			</menu>
+		</menu>
+	</extension> -->
+</addon>

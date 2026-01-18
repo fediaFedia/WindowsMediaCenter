@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<animation effect="slide" start="800,0" end="0,0" time="75">WindowOpen</animation>
+	<animation effect="slide" start="0,0" end="800,0" delay="300" time="75">WindowClose</animation>
+	<coordinates>
+		<left>1140</left>
+		<top>30</top>
+	</coordinates>
+	<controls>
+		<control type="group">
+			<depth>DepthMax</depth>
+			<animation effect="slide" start="0,0" end="800,0" time="150" condition="Window.IsVisible(BusyDialog)">conditional</animation>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>750</width>
+				<height>115</height>
+				<texture border="20">win7\DialogBack.png</texture>
+			</control>
+			<control type="image" id="400">
+				<description>avatar</description>
+				<left>25</left>
+				<top>25</top>
+				<width>30</width>
+				<height>30</height>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="fadelabel" id="401">
+				<description>Line 1 Label</description>
+				<left>70</left>
+				<top>20</top>
+				<width>600</width>
+				<height>30</height>
+				<font>font36_ucase</font>
+				<textcolor>dialogHeader</textcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<scrollout>false</scrollout>
+				<pauseatend>2000</pauseatend>
+			</control>
+			<control type="fadelabel" id="402">
+				<description>Line 2 Label</description>
+				<left>70</left>
+				<top>50</top>
+				<width>600</width>
+				<height>20</height>
+				<font>font16</font>
+				<textcolor>white</textcolor>
+				<scrollout>false</scrollout>
+				<pauseatend>2000</pauseatend>
+			</control>
+		</control>
+	</controls>
+</window>
