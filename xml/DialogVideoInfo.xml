@@ -1585,5 +1585,6 @@
 			<include>Clock</include>
 			<visible>0</visible>
 		</control>
+			<include>MainWindowMouseButtons</include>
 	</controls>
 </window>
