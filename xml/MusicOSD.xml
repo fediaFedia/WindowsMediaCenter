@@ -233,6 +233,6 @@
 				</control>
 				
 				
-		<include>MainWindowMouseButtons</include>
+		<include>MainWindowMouseButtonsAlt</include>
 </controls>
 </window>

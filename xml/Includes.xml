@@ -3019,44 +3019,27 @@
 </control>
 	</include>
 
-
 	<include name="MainWindowMouseButtons">
 		<control type="group">
 			<left>30</left>
 			<top>15</top>
 			<animation effect="fade" time="200" condition="Window.IsVisible(10099)">conditional</animation>
 			<visible>Window.IsVisible(10099)</visible>
-			<control type="button">
-				<description>Back push button</description>
-				<left>0</left>
-				<top>10</top>
-				<width>50</width>
-				<height>50</height>
-				<label>1036</label>
-				<font/>
-				<onclick>Dialog.Close(all,true)</onclick>
-				<onclick>PreviousMenu</onclick>
-				
-				<texturefocus>AAAfloor_buttonFO.png</texturefocus>
-				<texturenofocus>AAAfloor_buttonFO.png</texturenofocus>
-				<onleft>50</onleft>
-				<onright>50</onright>
-				<onup>50</onup>
-				<ondown>50</ondown>
-			</control>
+			
 			<control type="button">
 				<description>Back Icon</description>
 				<left>0</left>
 				<top>10</top>
 				<width>70</width>
-				<onclick>Dialog.Close(all,true)</onclick>
-				<onclick>PreviousMenu</onclick>
+
+				<onclick>Back</onclick>
 
 				<height>70</height>
 				<aspectratio>keep</aspectratio>
 				<texturefocus>vista\controls\GOBACK.FOCUS.png</texturefocus>
 				<texturenofocus>vista\controls\GOBACK.NOFOCUS.png</texturenofocus>
 			</control>
+			
 			<control type="button">
 				<description>Home push button</description>
 				<left>80</left>
@@ -3076,37 +3059,49 @@
 				<ondown>40</ondown>
 			</control>
 		
+		</control>
+	</include>
+	
+	<include name="MainWindowMouseButtonsAlt">
+		<control type="group">
+			<left>30</left>
+			<top>15</top>
+			<animation effect="fade" time="200" condition="Window.IsVisible(10099)">conditional</animation>
+			<visible>Window.IsVisible(10099)</visible>
+			
 			<control type="button">
-				<description>Refresh push button</description>
-				<left>165</left>
+				<description>Back Icon</description>
+				<left>0</left>
 				<top>10</top>
-				<width>1</width>
-				<height>1</height>
+				<width>70</width>
+				<onclick>Dialog.Close(all,true)</onclick>
+				<onclick>PreviousMenu</onclick>
+
+				<height>70</height>
+				<aspectratio>keep</aspectratio>
+				<texturefocus>vista\controls\GOBACK.FOCUS.png</texturefocus>
+				<texturenofocus>vista\controls\GOBACK.NOFOCUS.png</texturenofocus>
+			</control>
+			
+			<control type="button">
+				<description>Home push button</description>
+				<left>80</left>
+				<top>5</top>
+				<width>75</width>
+				<aspectratio>keep</aspectratio>
+				<height>75</height>
 				<label>31003</label>
 				<font/>
-				<onclick>ReloadSkin()</onclick>
-				<texturefocus>floor_buttonFO.png</texturefocus>
-				<texturenofocus>floor_button.png</texturenofocus>
-				<onleft>50</onleft>
-				<onright>50</onright>
-				<onup>50</onup>
-				<ondown>50</ondown>
-			</control><!--
-			<control type="image">
-				<description>Back Icon</description>
-				<left>165</left>
-				<top>12</top>
-				<width>50</width>
-				<height>50</height>
-				<aspectratio>keep</aspectratio>
-				<texture>icon_refresh.png</texture>
-			</control>-->
-			<!--<control type="label"> Addressbar - i don't like it
-				<top>10</top>
-				<left>225</left>
-				<width>1000</width>
-				<label>$INFO[Container.FolderPath]</label>
-			</control>-->
+				<onclick>Dialog.Close(all,true)</onclick>
+				<onclick>ActivateWindow(home)</onclick>
+				<texturefocus>kodi-button3.png</texturefocus>
+				<texturenofocus>kodi-button2.png</texturenofocus>
+				<onleft>40</onleft>
+				<onright>40</onright>
+				<onup>40</onup>
+				<ondown>40</ondown>
+			</control>
+		
 		</control>
 	</include>
 	<include name="CommonNowPlaying">
